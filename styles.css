@@ -1,0 +1,369 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                gap: 3rem;
+            }
+            .left-panel, .right-panel {
+                flex: 1;
+                padding: 2rem;
+            }
+        }
+
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+        }
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 768px) {
+            .summary-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .summary-card {
+            background-color: #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card p {
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .income-text {
+            color: #10b981;
+        }
+        .expense-text {
+            color: #ef4444;
+        }
+        .net-balance-text {
+            color: #3b82f6;
+        }
+
+        #transaction-form {
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group:last-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.25;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+        .radio-group label {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: #bfdbfe;
+            color: #1e40af;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .radio-group label:hover {
+            background-color: #93c5fd;
+        }
+        .radio-group input[type="radio"]:checked + label {
+            background-color: #3b82f6;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .button-group {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .button-group button {
+                flex-grow: 1;
+            }
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+        }
+        .btn-primary:focus, .btn-secondary:focus {
+             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary {
+            background-color: #6b7280;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #4b5563;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-secondary:focus {
+            box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.5);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .filter-group div {
+            display: flex;
+            align-items: center;
+        }
+        .filter-group label {
+            margin-right: 1rem;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        .filter-group input[type="radio"] {
+            margin-right: 0.5rem;
+            transform: scale(1.2);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            outline: none;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .filter-group input[type="radio"]:checked {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .filter-group input[type="radio"]:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+        }
+
+        #transaction-list-container {
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+        }
+        #transaction-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            border-left: 5px solid;
+        }
+        .transaction-item.income {
+            border-left-color: #10b981;
+        }
+        .transaction-item.expense {
+            border-left-color: #ef4444;
+        }
+
+        .transaction-item > div:first-child {
+            flex-grow: 1;
+        }
+
+        .transaction-item p {
+            color: #1a202c;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .transaction-item span {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+            white-space: nowrap;
+            margin-right: 0.5rem;
+        }
+        .transaction-amount.income {
+            color: #10b981;
+        }
+        .transaction-amount.expense {
+            color: #ef4444;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .edit-btn, .delete-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .edit-btn {
+            color: #3b82f6;
+        }
+        .edit-btn:hover {
+            background-color: #eff6ff;
+        }
+        .delete-btn {
+            color: #ef4444;
+        }
+        .delete-btn:hover {
+            background-color: #fee2e2;
+        }
+
+        .edit-btn svg, .delete-btn svg {
+            height: 1.25rem;
+            width: 1.25rem;
+            vertical-align: middle;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #718096;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
